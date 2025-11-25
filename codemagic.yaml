@@ -1,10 +1,10 @@
 workflows:
-  simple-build:
-    name: Simple APK Build
+  android-apk:
+    name: Android APK
     environment:
-      flutter: "3.16.0"
+      flutter: stable
     scripts:
-      - name: Build Debug APK
+      - name: Build APK
         script: |
           flutter pub get
           flutter build apk --debug
