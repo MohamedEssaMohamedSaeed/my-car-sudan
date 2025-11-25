@@ -1,0 +1,13 @@
+workflows:
+  fix-android:
+    name: Fix Android v1 Embedding
+    environment:
+      flutter: "3.16.0"
+    scripts:
+      - name: Build APK Only
+        script: |
+          flutter clean
+          flutter pub get
+          flutter build apk --debug
+    artifacts:
+      - build/app/outputs/flutter-apk/app-debug.apk
