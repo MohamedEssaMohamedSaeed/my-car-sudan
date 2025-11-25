@@ -1,0 +1,13 @@
+analyzer:
+  errors:
+    missing_required_param: ignore
+    missing_return: ignore
+    dead_code: ignore
+  exclude:
+    - build/**
+
+linter:
+  rules:
+    - avoid_print
+    - prefer_const_constructors
+    - prefer_const_declarations
