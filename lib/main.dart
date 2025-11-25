@@ -1,30 +1,30 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_localizations/flutter_localizations.dart';  // أضف هذا
-import 'screens/welcome_screen.dart';
 
-void main() {
-  runApp(MyApp());
-}
+void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'مركبتي - السودان',
-      localizationsDelegates: [  // أضف هذا
-        GlobalMaterialLocalizations.delegate,
-        GlobalWidgetsLocalizations.delegate,
-        GlobalCupertinoLocalizations.delegate,
-      ],
-      supportedLocales: [  // وأضف هذا
-        Locale('ar', 'AE'), // Arabic
-      ],
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-        fontFamily: 'Tajawal',
+      home: Scaffold(
+        appBar: AppBar(title: Text('مركبتي - السودان')),
+        body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Icon(Icons.car_rental, size: 80, color: Colors.blue),
+              SizedBox(height: 20),
+              Text('تطبيق إيجاد المركبات المفقودة', 
+                   style: TextStyle(fontSize: 18)),
+              SizedBox(height: 30),
+              ElevatedButton(
+                onPressed: () {},
+                child: Text('بدء الاستخدام'),
+              ),
+            ],
+          ),
+        ),
       ),
-      home: WelcomeScreen(),
-      debugShowCheckedModeBanner: false,
     );
   }
 }
